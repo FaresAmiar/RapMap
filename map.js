@@ -1,3 +1,6 @@
-var map = L.map('map').setView([14,-14.8883335],4);
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: 'PING'}).addTo(map);
+window.onload = function () {
+    var map = L.map('map').setView([48.7945, 2.3340], 11);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: 'PING'}).addTo(map);
+}
 
+var jsonRap = [{},{},{},{}]
