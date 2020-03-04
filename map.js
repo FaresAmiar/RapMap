@@ -3,4 +3,5 @@ window.onload = function () {
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: 'PING'}).addTo(map);
 }
 
-var jsonRap = [{},{},{},{}]
+
+
