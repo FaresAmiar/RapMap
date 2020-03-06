@@ -25,7 +25,7 @@ console.log(json)
 
 json.then((value) => { enfinTMRCNWAAAR(value)})
 
-function enfinTMRCNWAAAR(json) {
+function NWAARNWAAR(json) {
     for(var i = 0; i < json.length; ++i) {
         var coord = json[i]['location']['coordinates'];
         var coords = coord.split(',')
