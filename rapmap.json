@@ -144,6 +144,211 @@
 
 
 
+{"name":"Hornet La Frappe",
+    "location":{"city":"Épinay-sur-Seine","neighborhood":"","coordinates":"2.293878, 48.958782"},
+    "categories":["rapper"],
+    "bio":{"summary":"Hornet La Frappe is French rapper from Épinay-sur-Seine, Seine-Saint-Denis. ",
+    "url":"",
+    "birthdate":null,"deathdate":null,"yearsActiveStart":2012,"yearsActiveEnd":null},
+    "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/rGlmnb5pmJw"}
+    },
+
+    {"name":"Busta Flex",
+        "location":{"city":"Épinay-sur-Seine","neighborhood":"Orgemont","coordinates":"2.295370, 48.957826"},
+        "categories":["rapper"],
+        "bio":{"summary":"Valéry François know has Busta Flex, (born 30 september 1977) is a french rapper from Val-d'Oise.",
+        "url":"https://fr.wikipedia.org/wiki/Busta_Flex",
+        "birthdate":"1977-09-30T00:00:00.000Z","deathdate":null,"yearsActiveStart":1994,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/fcK5FOxWKew"}
+    },
+
+    {"name":"Alpha 5.20",
+        "location":{"city":"Épinay-sur-Seine","neighborhood":"Orgemont","coordinates":"2.295619, 48.955525"},
+        "categories":["rapper"],
+        "bio":{"summary":"Alpha 5.20 is an French rapper, from Épinay-sur-Seine, Seine-Saint-Denis. He is the leader of the Ghetto Fabulous Gang.","url":"https://fr.wikipedia.org/wiki/Ghetto_Fabulous_Gang",
+        "birthdate":null,"deathdate":null,"yearsActiveStart":2001,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/fBkbkgMAac0"}
+    },
+
+    {"name":"Maes",
+        "location":{"city":"Sevran","neighborhood":"Beaudottes","coordinates":"2.522351, 48.947632"},
+        "categories":["rapper"],
+        "bio":{"summary":"Maes is a French rapper from Sevran, Seine-Saint-Denis. ","url":"","birthdate":"1995-01-10T00:00:00.000Z","deathdate":null,"yearsActiveStart":2017,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/tY-wJ3qTKGM"}
+    },
+    
+    {"name":"13 Block",
+        "location":{"city":"Sevran","neighborhood":"","coordinates":"2.533054, 48.929103"},
+        "categories":["group"],
+        "bio":{"summary":"13 Block is a french Hip Hop group from Sevran,  Seine-Saint-Denis. The group is composed of DeTess, OldPee, Zefor, et Zed.","url":"https://genius.com/artists/13-block",
+        "birthdate":null,"deathdate":null,"yearsActiveStart":2014,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/I0mlyOmzs4I"}
+    },
+
+    {"name":"Dinos Punchlinovic",
+        "location":{"city":"Seine-Saint-Denis",
+        "neighborhood":"La Courneuve","coordinates":"2.397335, 48.931401"},
+        "categories":["rapper"],
+        "bio":{"summary":"Dinos Punchlinovic is a French rapper from La Courneuve, Seine-Saint-Denis.","url":"","birthdate":null,"deathdate":null,"yearsActiveStart":2012,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/8l5yhh0m1HA"}
+    },
+
+    {"name":"Sadek",
+        "location":{"city":"Seine-Saint-Denis","neighborhood":"Neuilly-Plaisance","coordinates":"2.508656, 48.862005"},
+        "categories":["rapper"],
+        "bio":{"summary":"Sadek Bourghuiba (born 25 May 1991) and known by the mononym Sadek is a French rapper from Neuilly-Plaisance. He also uses the pseudonym Johnny Niuuum or Sadek Niuum. He is signed to the French Hostile record label.",
+        "url":"https://en.wikipedia.org/wiki/Sadek_(rapper)","birthdate":"1991-05-25T00:00:00.000Z","deathdate":null,"yearsActiveStart":2012,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/23_QHQzUruw"}
+    },
+
+    {"name":"Mac Tyer",
+        "location":{"city":"Aubervilliers","neighborhood":"","coordinates":"2.374911, 48.914508"},
+        "categories":["rapper"],
+        "bio":{"summary":"Socrate Petteng better known as Mac Tyer is a French rapper of Cameroonian descent, born in Aubervilliers, Seine-Saint-Denis. Alongside with Mac Kregor he is a member of the rap band Tandem. ",
+        "url":"https://en.wikipedia.org/wiki/Mac_Tyer","birthdate":"1979-04-23T00:00:00.000Z","deathdate":null,"yearsActiveStart":1999,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/8YIbnejG8vY"}
+    },
+
+    {"name":"Sefyu",
+        "location":{"city":"Aulnay-sous-Bois","neighborhood":"Cité Nouvelle Emmaüs","coordinates":"2.491753, 48.950124"},
+        "categories":["rapper"],
+        "bio":{"summary":"Youssef Soukouna (born 20 April 1981), better known by his stage name Sefyu is a French rapper of Senegalese descent from Aulnay-sous-Bois, Seine-Saint-Denis.",
+        "url":"https://en.wikipedia.org/wiki/Sefyu","birthdate":"1981-04-20T00:00:00.000Z","deathdate":null,"yearsActiveStart":2004,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/Nzt7puchldA"}
+    },
+
+    {"name":"Vald",
+        "location":{"city":"Aulnay-sous-Bois","neighborhood":"","coordinates":"2.493237, 48.934982"},
+        "categories":["rapper"],
+        "bio":{"summary":"Valentin Le Du, know has Vald (born 15 jully 1992) is a French rapper from Aulnay-sous-Bois, Seine-Saint-Denis.",
+        "url":"https://fr.wikipedia.org/wiki/Vald","birthdate":"1992-07-15T00:00:00.000Z","deathdate":null,"yearsActiveStart":2011,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/lA0FgzTvSUc"}
+    },
+
+    {"name":"Nakk",
+        "location":{"city":"Bobigny","neighborhood":"Cité Paul Éluard","coordinates":"2.443653, 48.907971"},
+        "categories":["rapper"],
+        "bio":{"summary":"Nakk, real name Narcisse Kamga, born the 30 march 1976, is a french rapper from Bobigny, Seine-Saint-Denis.","url":"https://fr.wikipedia.org/wiki/Nakk","birthdate":"1976-03-30T00:00:00.000Z","deathdate":null,"yearsActiveStart":1996,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/O5qpCh3fAB0"}
+    },
+
+    {"name":"Sofiane",
+        "location":{"city":"Blanc Ménil","neighborhood":"","coordinates":"2.472660, 48.924417"},
+        "categories":["rapper"],
+        "bio":{"summary":"Sofiane Zermani (born 21 July 1986) better known by the mononym Sofiane is a French rapper of Algerian origin. He is also known by the name Fianso. He come from Le Blanc-Mesni, Seine-Saint-Denis.",
+        "url":"https://en.wikipedia.org/wiki/Sofiane_(rapper)","birthdate":"1986-07-21T00:00:00.000Z","deathdate":null,"yearsActiveStart":2007,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/6zIiuUH4Q8s"}
+    },
+    
+    {"name":"Kalash Criminel",
+        "location":{"city":"Sevran","neighborhood":"Rougemont","coordinates":"2.524996, 48.936965"},
+        "categories":["rapper"],
+        "bio":{"summary":"Kalash Criminel is a French rapper of Congolese descent from Sevran, Seine-Saint-Denis.",
+        "url":"","birthdate":null,"deathdate":null,"yearsActiveStart":2016,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/OYSHRYTprI8"}
+    },
+
+    {"name":"Alibi Montana",
+        "location":{"city":"La Courneuve","neighborhood":"La cité des 4000","coordinates":"2.380000, 48.926000"},
+        "categories":["rapper"],
+        "bio":{"summary":"Nikarson Saint-Germain better known by his stage name Alibi Montana (born in Villetaneuse, Seine-Saint-Denis, France in 1978) is a French rapper of Haitian origin.",
+        "url":"https://en.wikipedia.org/wiki/Alibi_Montana","birthdate":null,"deathdate":null,"yearsActiveStart":1999,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/QuUGVaijFW4"}
+    },
+
+    {"name":"Tandem",
+        "location":{"city":"Aubervilliers","neighborhood":"","coordinates":"2.387739, 48.915267"},
+        "categories":["group"],
+        "bio":{"summary":"Tandem was a French rap band from Aubervilliers, Seine-Saint-Denis formed by Mac Tyer, de Mac Kregor et & Mac Thyff.",
+        "url":"https://fr.wikipedia.org/wiki/Tandem_(groupe)","birthdate":null,"deathdate":null,"yearsActiveStart":1999,"yearsActiveEnd":2012},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/icgYS_u8TtI"}
+    },
+    
+    {"name":"Suprême NTM",
+        "location":{"city":"Saint-Denis","neighborhood":"","coordinates":"2.377206, 48.944615"},
+        "categories":["group"],
+        "bio":{"summary":"Suprême NTM (or simply NTM) is a French hip hop group formed in 1989 in the Seine-Saint-Denis département. The group comprises rappers Joey Starr (born Didier Morville) and Kool Shen (born Bruno Lopes).",
+        "url":"https://en.wikipedia.org/wiki/Supr%C3%AAme_NTM","birthdate":null,"deathdate":null,"yearsActiveStart":1989,"yearsActiveEnd":2001},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/Y4uOM7s38XA"}
+    },
+
+
+
+
+
+
+{"name":"Kamelancien",
+        "location":{"city":"Kremlin-Bicêtre","neighborhood":"Cité des Martinets","coordinates":"2.348219, 48.806989"},
+        "categories":["rapper"],
+        "bio":{"summary":"Kamel Jdayni Houari (born in Le Kremlin-Bicêtre on 13 May 1980) better known as Kamelancien later shortened into Kamelanc', is a francophone rapper of Moroccan origin. He grew up in Le Kremlin-Bicêtre, a town in the suburbs of Paris.",
+        "url":"https://en.wikipedia.org/wiki/Kamelanc%27","birthdate":"1980-05-13T00:00:00.000Z","deathdate":null,"yearsActiveStart":1993,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/OIKKhbBfeK0"}
+    },
+
+    {"name":"Lacrim",
+        "location":{"city":"Chevilly-Larue","neighborhood":"Cité Anatole France","coordinates":"2.3640913, 48.7650549"},
+        "categories":["rapper"],
+        "bio":{"summary":"Karim Zenoud better known by his stage name Lacrim at times stylized as LaCrim is a French rapper from Algerian origins.",
+        "url":"https://en.wikipedia.org/wiki/Lacrim","birthdate":"1985-04-19T00:00:00.000Z","deathdate":null,"yearsActiveStart":2009,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/Im9ReKhoN4o"}
+    },
+
+    {"name":"113",
+        "location":{"city":"Vitry-sur-Seine","neighborhood":"","coordinates":"2.403053, 48.789790"},
+        "categories":["group"],
+        "bio":{"summary":"113 is a French hip hop group with African and Caribbean roots originating in North and West Africa and the island of Guadeloupe, formed in the Parisian suburb of Vitry-sur-Seine.",
+        "url":"https://en.wikipedia.org/wiki/113_(band)","birthdate":null,"deathdate":null,"yearsActiveStart":1994,"yearsActiveEnd":2011},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/sY8Ej3tn0Gk"}
+    },
+
+    {"name":"Mafia K1 Fry",
+        "location":{"city":"Paris","neighborhood":"Val-de-Marne","coordinates":"2.410339, 48.763903"},
+        "categories":["group"],
+        "bio":{"summary":"Mafia K-1 Fry sometimes stylized as Mafia K'1 Fry is a French collective of hip hop rappers from the Val-de-Marne and the Orly-Choisy-Vitry-Joinville axis, south of Paris.",
+        "url":"https://en.wikipedia.org/wiki/Mafia_K-1_Fry","birthdate":null,"deathdate":null,"yearsActiveStart":1995,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/QzoBB9NO9Dc"}
+    },
+
+    {"name":"Rim'K",
+        "location":{"city":"Vitry-sur-Seine","neighborhood":"Cité Camille Groult","coordinates":"2.394227, 48.786546"},
+        "categories":["rapper"],
+        "bio":{"summary":"Abdelkrim Brahmi a.k.a. Rim'K (born 21 June 1978 in Paris, France) is a French rapper of Algerian descent. Rim'K was raised in the Parisian suburb of Vitry-sur-Seine.",
+        "url":"https://en.wikipedia.org/wiki/Rim'K","birthdate":"1978-06-21T00:00:00.000Z","deathdate":null,"yearsActiveStart":1994,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/lwvKFXfnzc4"}
+    },
+    
+    {"name":"Kery James",
+        "location":{"city":"Orly","neighborhood":"","coordinates":"2.402475, 48.745477"},
+        "categories":["rapper"],
+        "bio":{"summary":"Alix Mathurin (born 28 December 1977) better known as Kery James, is a French rapper from Orly.",
+        "url":"https://en.wikipedia.org/wiki/Kery_James","birthdate":"1977-12-28T00:00:00.000Z","deathdate":null,"yearsActiveStart":1990,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/Oqm2UoqXCiA"}
+    },
+
+    {"name":"Rohff",
+        "location":{"city":"Vitry-sur-Seine","neighborhood":"Cité Robespierre","coordinates":"2.389360, 48.791011"},
+        "categories":["rapper"],
+        "bio":{"summary":"Housni Mkouboi better known as Rohff at times stylized as Roh2f (born in Antananarivo, Madagascar on 15 December 1977) is a French rapper.",
+        "url":"https://en.wikipedia.org/wiki/Rohff","birthdate":"1977-12-15T00:00:00.000Z","deathdate":null,"yearsActiveStart":1998,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/yW8a4WDHf34"}
+    },
+
+    {"name":"MC Solaar",
+        "location":{"city":"Villeneuve-Saint-Georges","neighborhood":"Quartier Nord","coordinates":"2.4485109, 48.7511682"},
+        "categories":["rapper","singer"],
+        "bio":{"summary":"Claude M'Barali better known by his stage name MC Solaar (born March 5, 1969) is a French hip hop and rap artist with Senegalese and Chadian origins.",
+        "url":"https://en.wikipedia.org/wiki/MC_Solaar","birthdate":"1969-03-05T00:00:00.000Z","deathdate":null,"yearsActiveStart":1988,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/PjELabiPItw"}
+    },
+
+    {"name":"Nesbeal",
+        "location":{"city":"Villiers-sur-Marne","neighborhood":"Hautes-Noues","coordinates":"2.535869, 48.835658"},
+        "categories":["rapper"],
+        "bio":{"summary":"Nabil Sahli (born 16 August 1978), better known by his stage name Nessbeal, is a French rapper from Villiers-sur-Marne, Val-de-Marne.",
+        "url":"https://en.wikipedia.org/wiki/Nessbeal","birthdate":"1978-08-16T00:00:00.000Z","deathdate":null,"yearsActiveStart":1999,"yearsActiveEnd":null},
+        "youtube":{"clipExampleUrl":"https://www.youtube.com/embed/TxIF_P9VoRg"}
+    },
+	
 
 
 
