@@ -1,4 +1,5 @@
 let map;
+let json;
 
 $(document).ready(function () {
     definirMap()
@@ -19,12 +20,16 @@ function definirMap() {
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     })
 
-    const fetchAsync = async () =>
-        await (await fetch('./rapmap.json')).json()
-
-    var json = fetchAsync();
-
-    json.then((value) => { locatione(value)})
+    async function fetchAsync () {
+		$.getJSON("./rapmap.json", (data) => {
+			json = data;
+			locatione(json);
+			});
+	}
+	
+    fetchAsync();
+	
+    json.then((value) => { locatione(value)});
 
     function locatione(json) {
         for(var i = 0; i < json.length; ++i) {
@@ -37,19 +42,6 @@ function definirMap() {
         console.log("afficher")
     }
 
-
-
-
-$("#envoyer").click(function(){
-
-    $.ajax({
-        url : 'send_mail.php',
-        type : 'POST', // Le type de la requête HTTP, ici devenu POST
-        data : 'email=' + email + '&contenu=' + contenu_mail, // On fait passer nos variables, exactement comme en GET, au script more_com.php
-        dataType : 'html'
-    });
-
-});
 
 
 
