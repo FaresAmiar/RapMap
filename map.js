@@ -27,17 +27,31 @@ let img;
         await locatione(json);
     }
 
-    function ajouterChanteur() {
-        let dataChanteur = {};
-
-        $.post({
-            url : "base.php",
-            data : $("#nomChanteur").val(),
-            dataType : "text",
-            success : () => {
-                alert("Requête d'ajout de chanteur envoyée");
-            }
-        });
+    async function ajouterChanteur() {
+        let coordinate2 = "";
+        let longitude;
+        let latitude;
+        await fetch("https://api-adresse.data.gouv.fr/search/?q="+$("#villeChanteur").val())
+            .then( res => res.json())
+            .then(data => {
+                longitude = data.features[0].geometry.coordinates[0].toString();
+                latitude = data.features[0].geometry.coordinates[1].toString();
+                coordinate2 = longitude + ", " + latitude;
+            });
+        await $.post(
+            'base.php',
+            {
+                name : $("#nomChanteur").val(),
+                location : {coordinates : coordinate2, city : $("#villeChanteur").val()},
+            },
+            function (data) {
+                if(data === 'Success')
+                    alert("Requête d'ajout de chanteur envoyée");
+                else
+                    alert("Chanteur non trouvé");
+            },
+            'text'
+        );
     }
 
     fetchAsync(); 
@@ -81,7 +95,8 @@ let img;
             }else{
                 popup += "<br>Instagram: " + artiste.instagram
             }
-            popup += '<br>Youtube: <iframe width="220" height="115" src="'+ json[i]['youtube']['clipExampleUrl'] +'"></iframe>'
+            if(json[i]['youtube'] !== undefined)
+                popup += '<br>Youtube: <iframe width="220" height="115" src="'+ json[i]['youtube']['clipExampleUrl'] +'"></iframe>'
             marker.bindPopup(popup).openPopup()
         }
         console.log("afficher")
