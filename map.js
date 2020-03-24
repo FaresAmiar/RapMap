@@ -3,37 +3,39 @@ let json;
 let id = 0;
 let img;
 
-var LeafIcon = L.Icon.extend({
-    options: {
-        iconSize:     [60, 60],
-        iconAnchor:   [60, 60],
-        popupAnchor:  [-30, -70]
-    }
-});
-
-$(document).ready(function () {
-    definirMap()
-})
-
-function definirMap() {
-
-    map = L.map('map').setView([48.7945, 2.3340], 11);
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: 'PING'}).addTo(map);
-
-}
-    let greenIcon = L.icon({
-        iconUrl: 'leaf-green.png',
-        shadowUrl: 'leaf-shadow.png',
-        iconSize:     [10, 10], // size of the icon
-        shadowSize:   [50, 64], // size of the shadow
-        iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-        shadowAnchor: [4, 62],  // the same for the shadow
-        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    var LeafIcon = L.Icon.extend({
+        options: {
+            iconSize:     [60, 60],
+            iconAnchor:   [60, 60],
+            popupAnchor:  [-30, -70]
+        }
     });
 
+    $(document).ready(function () {
+        definirMap()
+    });
+
+    function definirMap() {
+
+        map = L.map('map').setView([48.7945, 2.3340], 11);
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: 'PING'}).addTo(map);
+
+        $('#ajouterChanteur').click(ajouterChanteur());
+    }
     async function fetchAsync () {
 		await $.getJSON("./rapmap.json", (data) => json = data);
         await locatione(json);
+    }
+
+    function ajouterChanteur() {
+        $.post({
+            url : "base.php",
+            data : $("#nomChanteur").val(),
+            dataType : "text",
+            success : () => {
+                alert("Requête d'ajout de chanteur envoyée");
+            }
+        })
     }
 
     fetchAsync(); 

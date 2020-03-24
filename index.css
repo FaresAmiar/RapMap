@@ -4,5 +4,11 @@ body {
 }
 
 #map {
-    height: 1000px;
+    height: 70vh;
+    width: 150vh;
+}
+
+#options {
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
