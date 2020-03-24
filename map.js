@@ -28,6 +28,8 @@ let img;
     }
 
     function ajouterChanteur() {
+        let dataChanteur = {};
+
         $.post({
             url : "base.php",
             data : $("#nomChanteur").val(),
@@ -35,7 +37,7 @@ let img;
             success : () => {
                 alert("Requête d'ajout de chanteur envoyée");
             }
-        })
+        });
     }
 
     fetchAsync(); 
