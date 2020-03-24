@@ -19,6 +19,7 @@ function definirMap() {
 
     map = L.map('map').setView([48.7945, 2.3340], 11);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: 'PING'}).addTo(map);
+
 }
     let greenIcon = L.icon({
         iconUrl: 'leaf-green.png',
@@ -31,10 +32,8 @@ function definirMap() {
     });
 
     async function fetchAsync () {
-		$.getJSON("./rapmap.json", (data) => {
-			json = data;
-			locatione(json);
-			});
+		await $.getJSON("./rapmap.json", (data) => json = data);
+        await locatione(json);
     }
 
     fetchAsync(); 
