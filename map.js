@@ -42,11 +42,8 @@ let img;
 
     fetchAsync(); 
 	
-    // json.then((value) => { locatione(value)});
-
     async function locatione(json) {
-        // for(var i = 0; i < json.length; ++i) {
-        for(var i = 0; i < 10; ++i) {
+        for(var i = 0; i < json.length; ++i) {
 
             var coord = json[i]['location']['coordinates'];
             var coords = coord.split(',')
@@ -84,7 +81,7 @@ let img;
             }else{
                 popup += "<br>Instagram: " + artiste.instagram
             }
-            
+            popup += '<br>Youtube: <iframe width="220" height="115" src="'+ json[i]['youtube']['clipExampleUrl'] +'"></iframe>'
             marker.bindPopup(popup).openPopup()
         }
         console.log("afficher")
@@ -149,52 +146,4 @@ let img;
             
         }
     }
-
-
-
-
-
-    // async function getIdArtiste(nom){
-    //     var URLId = 'https://api.genius.com/search?q='+nom+'&access_token=GeU8QghXpNWNaWVNgdew5wSrh8uAKlsGqfYNp0VFXNHcRVzAEzOVT8xuLCCdwI1R';
-
-    //     let response = await fetch(URLId,{
-    //         method: 'GET'
-    //     })
-    //     let data = await response.json()
-    //     id = data['response']['hits'][0]['result']['primary_artist']['id']
-    // }
-
-    // function getImage(nom){
-    //     let URLId = 'https://api.genius.com/search?q='+nom+'&access_token=GeU8QghXpNWNaWVNgdew5wSrh8uAKlsGqfYNp0VFXNHcRVzAEzOVT8xuLCCdwI1R';
-    //     fetch(URLId).then(function (response) {
-    //         if (response.ok) {
-    //             return response.json();
-    //         } else {
-    //             return Promise.reject(response);
-    //         }
-    //     }).then(function (data) {
-
-    //         // Store the post data to a variable
-    //         id = data['response']['hits'][0]['result']['primary_artist']['id'];
-    //         console.log(id)
-    //         let URLArtiste = 'https://api.genius.com/artists/'+id+'?access_token=GeU8QghXpNWNaWVNgdew5wSrh8uAKlsGqfYNp0VFXNHcRVzAEzOVT8xuLCCdwI1R';
-
-    //         // Fetch another API
-    //         return fetch(URLArtiste);
-
-    //     }).then(function (response) {
-    //         if (response.ok) {
-    //             return response.json();
-    //         } else {
-    //             return Promise.reject(response);
-    //         }
-    //     }).then(function (artistdata) {
-    //         img = artistdata['response']['artist']['image_url']
-    //     }).catch(function (error) {
-    //         console.warn(error);
-    //     });
-    //     return img
-    // }
-    
-
 
