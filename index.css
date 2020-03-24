@@ -1,0 +1,10 @@
+#container {
+    display: flex;
+}
+
+.carte {
+    height: 500px;
+    width: 500px;
+    justify-content: center;
+    align-self: center;
+}
