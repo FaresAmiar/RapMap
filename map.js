@@ -5,9 +5,9 @@ let img;
 
 var LeafIcon = L.Icon.extend({
     options: {
-        iconSize:     [38, 95],
-        iconAnchor:   [22, 94],
-        popupAnchor:  [-3, -76]
+        iconSize:     [60, 60],
+        iconAnchor:   [60, 60],
+        popupAnchor:  [-30, -70]
     }
 });
 
@@ -23,7 +23,7 @@ function definirMap() {
     let greenIcon = L.icon({
         iconUrl: 'leaf-green.png',
         shadowUrl: 'leaf-shadow.png',
-        iconSize:     [38, 95], // size of the icon
+        iconSize:     [10, 10], // size of the icon
         shadowSize:   [50, 64], // size of the shadow
         iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
         shadowAnchor: [4, 62],  // the same for the shadow
@@ -31,29 +31,63 @@ function definirMap() {
     });
 
     async function fetchAsync () {
-		await $.getJSON("./rapmap.json", (data) => json = data);
-        locatione(json)
+		$.getJSON("./rapmap.json", (data) => {
+			json = data;
+			locatione(json);
+			});
     }
 
-    fetchAsync();
+    fetchAsync(); 
 	
     // json.then((value) => { locatione(value)});
 
     async function locatione(json) {
-        for(var i = 0; i < 3; ++i) {
+        // for(var i = 0; i < json.length; ++i) {
+        for(var i = 0; i < 10; ++i) {
+
             var coord = json[i]['location']['coordinates'];
             var coords = coord.split(',')
             coord = [coords[1].substring(1)]
             coord.push(coords[0])
-            var img = { link : ""};
-            await getImage(json[i]['name'],img);
-            console.log('First name: ' + img.link + ', ' + 'last name: ' + (id + i))
-            L.marker(coord,new LeafIcon({iconUrl: "https://fr.m.wikipedia.org/wiki/Fichier:Approve_icon.svg"})).addTo(map)
+            
+            var artiste = {link : "", bio:"", twitter:"", facebook: "", instagram: ""};
+            await getImage(json[i]['name'],artiste);
+            await getBio(json[i]['name'],artiste);
+            console.log(artiste)
+
+            var icon = new LeafIcon({iconUrl: artiste.link})
+            var marker = L.marker(coord,{icon: icon}).addTo(map)
+            
+            var popup = ""
+            popup += "Nom : " + json[i]['name']
+            popup += "<br>Ville : " + json[i]['location']['city']
+            if(artiste.bio != "?") {
+                popup += "<br>Biographie: " + artiste.bio
+            }else{
+                popup += "<br>Biographie: " + json[i]['bio']['summary']
+            }
+            if(artiste.twitter === "" || artiste.twitter === null) {
+                popup += "<br>Twitter: "             
+            }else{
+                popup += "<br>Twitter: " + artiste.twitter            
+            }
+            if(artiste.facebook === "" || artiste.facebook === null) {
+                popup += "<br>Facebook: "
+            }else{
+                popup += "<br>Facebook: " + artiste.facebook
+            }
+            if(artiste.instagram === "" || artiste.instagram === null) {
+                popup += "<br>Instagram: " 
+            }else{
+                popup += "<br>Instagram: " + artiste.instagram
+            }
+            
+            marker.bindPopup(popup).openPopup()
         }
         console.log("afficher")
     }
 
-    async function getImage(nom,img){
+    async function getImage(nom,artiste){
         let URLId = 'https://api.genius.com/search?q='+nom+'&access_token=GeU8QghXpNWNaWVNgdew5wSrh8uAKlsGqfYNp0VFXNHcRVzAEzOVT8xuLCCdwI1R';
         let responseID = await fetch(URLId,{
             method: 'GET'
@@ -68,10 +102,51 @@ function definirMap() {
             method: 'GET'
         })
         let dataArtiste = await responseArtiste.json()
-        img.link = dataArtiste['response']['artist']['image_url']
-        console.log(img)
+        artiste.link = dataArtiste['response']['artist']['image_url']
 
     }
+
+    async function getBio(nom,artiste){
+        let URLId = 'https://api.genius.com/search?q='+nom+'&access_token=GeU8QghXpNWNaWVNgdew5wSrh8uAKlsGqfYNp0VFXNHcRVzAEzOVT8xuLCCdwI1R';
+        let responseID = await fetch(URLId,{
+            method: 'GET'
+        })
+        let dataID = await responseID.json()
+        id = dataID['response']['hits'][0]['result']['primary_artist']['id']
+        
+        let URLArtiste = 'https://api.genius.com/artists/'+id+'?access_token=GeU8QghXpNWNaWVNgdew5wSrh8uAKlsGqfYNp0VFXNHcRVzAEzOVT8xuLCCdwI1R';
+        
+        let responseArtiste = await fetch(URLArtiste,{
+            method: 'GET'
+        })
+        let dataArtiste = await responseArtiste.json()
+
+        var bio = {bio: ""}
+        biotxt(dataArtiste['response']['artist']['description']['dom']['children'], bio)
+        artiste.bio = bio.bio
+
+        artiste.facebook = dataArtiste['response']['artist']['facebook_name']
+        artiste.instagram= dataArtiste['response']['artist']['instagram_name']
+        artiste.twitter = dataArtiste['response']['artist']['twitter_name']
+        artiste.link = dataArtiste['response']['artist']['image_url']
+
+    }
+
+    function biotxt (children, bio){
+        for (let index = 0; index < children.length; index++) {
+            if(children[index].children != undefined){
+                biotxt(children[index].children,bio)
+            }
+            else if(children[index] === ""){
+                bio.bio += "<br>"
+            }
+            else if(typeof(children[index]) === 'string'){
+                bio.bio += children[index]
+            }
+            
+        }
+    }
+
 
 
 
