@@ -20,38 +20,44 @@ let img;
         map = L.map('map').setView([48.7945, 2.3340], 11);
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: 'PING'}).addTo(map);
 
-        $('#ajouterChanteur').click(ajouterChanteur());
+
     }
     async function fetchAsync () {
 		await $.getJSON("./rapmap.json", (data) => json = data);
-        await locatione(json);
+        //await locatione(json);
     }
 
     async function ajouterChanteur() {
         let coordinate2 = "";
         let longitude;
         let latitude;
-        await fetch("https://api-adresse.data.gouv.fr/search/?q="+$("#villeChanteur").val())
-            .then( res => res.json())
-            .then(data => {
-                longitude = data.features[0].geometry.coordinates[0].toString();
-                latitude = data.features[0].geometry.coordinates[1].toString();
-                coordinate2 = longitude + ", " + latitude;
-            });
-        await $.post(
-            'base.php',
-            {
-                name : $("#nomChanteur").val(),
-                location : {coordinates : coordinate2, city : $("#villeChanteur").val()},
+
+
+        await $.ajax("https://api-adresse.data.gouv.fr/search/?q=" + $("#villeChanteur").val())
+        .done((data) => {
+            longitude = data.features[0].geometry.coordinates[0];
+            latitude = data.features[0].geometry.coordinates[1];
+            coordinate2 = longitude + ", " + latitude;
+        });
+
+        let chanteur =  {
+            "name" : $("#nomChanteur").val(),
+            "location" : {"coordinates" : coordinate2, "city" : $("#villeChanteur").val()},
+        };
+        await $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "base.php",
+            data: chanteur,
+            success: function(response) {
+                console.log(response);
             },
-            function (data) {
-                if(data === 'Success')
-                    alert("Requête d'ajout de chanteur envoyée");
-                else
-                    alert("Chanteur non trouvé");
-            },
-            'text'
-        );
+            error: function(xhr, status, error) {
+                console.log(xhr);
+                console.log(status);
+                console.log(error);
+            }
+        });
     }
 
     fetchAsync(); 
