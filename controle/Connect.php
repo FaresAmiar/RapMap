@@ -8,7 +8,7 @@ if (isset($_POST['login'])) {
     array(':username'=>$_POST['username'],':password'=>$_POST['password']));
     if (isset($arr[0])) {
         $_SESSION=$arr[0];
-        header('Location: Index.html');
+        header('Location: map.html');
     }
     else header('Location: Index.php');
 }
