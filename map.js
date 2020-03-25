@@ -20,12 +20,20 @@ let img;
         map = L.map('map').setView([48.7945, 2.3340], 11);
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: 'PING'}).addTo(map);
 
-        var routeCtrl = L.geoportalControl.Route({});
-        map.addControl(routeCtrl);
-        Gp.Services.getConfig({
-            apiKey : "jhyvi0fgmnuxvfv0zjzorvdn",
-            onSuccess : go
-        });
+        L.Routing.control({
+            // Nous personnalisons le tracé
+            lineOptions: {
+                styles: [{color: '#ff8f00', opacity: 1, weight: 7}]
+            },
+
+            // Nous personnalisons la langue et le moyen de transport
+            router: new L.Routing.osrmv1({
+                language: 'fr',
+                profile: 'car', // car, bike, foot
+            }),
+
+            geocoder: L.Control.Geocoder.nominatim()
+        }).addTo(map)
     }
 
     async function fetchAsync () {
