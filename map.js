@@ -13,65 +13,6 @@ let img;
 
     $(document).ready(function () {
         definirMap()
-            console.log("wssssh")
-            $( "#75" ).draggable({ revert: "valid"});
-            $( "#77" ).draggable({ revert: "valid" });
-            $( "#78" ).draggable({ revert: "valid" });
-            $( "#91" ).draggable({ revert: "valid" });
-            $( "#92" ).draggable({ revert: "valid" });
-            $( "#93" ).draggable({ revert: "valid" });
-            $( "#94" ).draggable({ revert: "valid" });
-            $( "#95" ).draggable({ revert: "valid" });
-            console.log("wshh2")
-        
-            //Rendre la map droppable
-            $( "#map" ).droppable({
-                //Evenement lors du drop
-                drop: function( event, ui ) {
-                    
-                    //Recup�re l'id du block div "dropped" dans la map
-                    var Iddep = ui.draggable.attr("id");
-                    
-                    if(Iddep != "empty"){
-                        //Requete AJAX pour r�cup�rer les coordonn�es (lati, longi) du pays
-                        let depcoord;
-    
-                        for(let i = 0; i < coord.length; ++i){
-                            if(coordjson[i]['properties']['code']===Iddep){
-                                depcoord = coordjson[i]
-                            }
-                        };
-                        
-                        $.ajax({
-                            type: 'GET',
-                            url: "http://nominatim.openstreetmap.org/search",
-                            dataType: 'jsonp',
-                            jsonpCallback: 'data',
-                            data: { format: "json", limit: 1,q : depcoord['properties']['nom'],json_callback: 'data' },
-                            error: function(xhr, status, error) {
-                                    alert("ERROR "+error);
-                            },
-                            success: function(data){
-                            //r�cup�rer les coordonn�es (lati, longi) du pays dans les donn�es json provenant du serveur
-                                var lati = '';
-                                var longi = '';
-                                $.each(data, function() {
-                                    lati = this['lat'] ;
-                                    longi = this['lon'] ;
-                            });
-                            
-                            //MAJ de la map � la position (lati, longi) du pays
-                            map.panTo(new L.LatLng(lati, longi));		
-                            
-                            }
-                        });
-    
-                        let deplayer = L.getJSON(depcoord);
-                        deplayer.addTo(map)
-               
-                    }
-                }
-            })
     });
 
     function definirMap() {
@@ -91,8 +32,6 @@ let img;
 		await $.getJSON("./rapmap.json", (data) => json = data);
         await afficherChanteur(json);
     }
-
-    fetchAsync(); 
 
     async function ajouterChanteur() {
         let coordinate2 = "";
@@ -128,6 +67,8 @@ let img;
             }
         });
     }
+
+    fetchAsync(); 
 	
     async function afficherChanteur(json) {
         for(var i = 0; i < json.length; ++i) {
