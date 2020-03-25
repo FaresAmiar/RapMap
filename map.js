@@ -79,15 +79,17 @@ let img;
         map = L.map('map').setView([48.7945, 2.3340], 11);
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: 'PING'}).addTo(map);
 
+        var routeCtrl = L.geoportalControl.Route({});
+        map.addControl(routeCtrl);
+        Gp.Services.getConfig({
+            apiKey : "jhyvi0fgmnuxvfv0zjzorvdn",
+            onSuccess : go
+        });
     }
 
-
-
     async function fetchAsync () {
-        await $.getJSON("./rapmap.json", (data) => rappeurjson = data);
-        await $.getJSON("./coord.json", (data) => coordjson = data);
-        //await locatione(rappeurjson);
-        
+		await $.getJSON("./rapmap.json", (data) => json = data);
+        await afficherChanteur(json);
     }
 
     fetchAsync(); 
@@ -106,14 +108,16 @@ let img;
         });
 
         let chanteur =  {
-            "name" : $("#nomChanteur").val(),
-            "location" : {"coordinates" : coordinate2, "city" : $("#villeChanteur").val()},
+            name : $("#nomChanteur").val(),
+            location : {coordinates : coordinate2, city : $("#villeChanteur").val()},
         };
+
+        let jsonChanteur = JSON.stringify(chanteur);
         await $.ajax({
             type: "POST",
-            dataType: "json",
+            contentType: "application/json",
             url: "base.php",
-            data: chanteur,
+            data: jsonChanteur,
             success: function(response) {
                 console.log(response);
             },
@@ -125,7 +129,7 @@ let img;
         });
     }
 	
-    async function locatione(json) {
+    async function afficherChanteur(json) {
         for(var i = 0; i < json.length; ++i) {
 
             var coord = json[i]['location']['coordinates'];
@@ -165,8 +169,8 @@ let img;
                 popup += "<br>Instagram: " + artiste.instagram
             }
             if(json[i]['youtube'] !== undefined)
-                popup += '<br>Youtube: <iframe width="220" height="115" src="'+ json[i]['youtube']['clipExampleUrl'] +'"></iframe>'
-            marker.bindPopup(popup).openPopup()
+                popup += '<br>Youtube: <iframe width="220" height="115" src="'+ json[i]['youtube']['clipExampleUrl'] +'"></iframe>';
+            marker.bindPopup(popup)
         }
         console.log("afficher")
     }
