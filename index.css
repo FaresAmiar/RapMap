@@ -20,3 +20,16 @@ options {
 input #villeChanteur {
     margin-left: 5%;
 }
+
+
+#departements{
+    margin: 5% 5% 5% 5%;
+    padding: 1% 1% 1% 1%;
+    border: solid 2px;
+    display : flex;
+}
+
+.ui-widget-content { width: 130px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; background-color: #ccffcc;}
+#droppable { width: 100; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+
+#draggable { width: 100; height: 150px; padding: 0.5em; color: red; margin: 10px; }
